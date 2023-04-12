@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 11 avr. 2023 à 18:07
+-- Généré le : mer. 12 avr. 2023 à 12:52
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -295,24 +295,25 @@ CREATE TABLE `users` (
   `postcode` int(11) NOT NULL,
   `State` text NOT NULL,
   `Country` text NOT NULL,
-  `role` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0 = client | 1 = admin'
+  `role` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0 = client | 1 = admin',
+  `added_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id_u`, `name`, `prenom`, `username`, `email`, `password`, `avatar_user`, `number`, `adress`, `postcode`, `State`, `Country`, `role`) VALUES
-(1, '', '', 'marouane', 'admin@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 1),
-(2, '', '', 'marouane user', 'user@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0),
-(3, '', '', 'marouane', 'uanemaro216@@gmail.com', '$2y$10$CPvGTgxRI0Hy6Adg82XMVOSZTSG93h3s5FCz5UrvSgHVMrQjj0GvG', 'avatar.png', '', '', 0, '', '', 0),
-(4, '', '', 'marouane', 'uanemaro216@gmail.com', '$2y$10$0aDfVD9NC3vyl.32G51gT.v.e33sz4PJMHF80S5rZWFa1p4JlAKgO', 'avatar.png', '', '', 0, '', '', 0),
-(5, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$GvLRocNxgwpQAAoNl/vNguBEPWAO821gApyRS6DN3iV7hpyX2z4nO', 'avatar.png', '', '', 0, '', '', 0),
-(6, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$dV3XWLLRJfuoBSEfNhD7D.fXH/UKCwgFKJyM222HE6ZWFFi3tRpwW', 'avatar.png', '', '', 0, '', '', 0),
-(7, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$LZwkKCOawqRtz0EG7DYsQObzYhI8FqDXfEP3l2A28h8eF7xpwz372', 'avatar.png', '', '', 0, '', '', 0),
-(8, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$14FFD5oNDAlqMBYBhrTGVOvclvacfguoXKNX3hX1wgeh2CLUN1bsm', 'avatar.png', '', '', 0, '', '', 0),
-(9, '', '', 'mi@gmail.com', '', '$2y$10$dXspze2yvq8PC/hVETX.der2fwhGy8r/v4jRqBqoGkMHgclGDVbLG', 'avatar.png', '', '', 0, '', '', 0),
-(10, '', '', 'mi', 'mi@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0);
+INSERT INTO `users` (`id_u`, `name`, `prenom`, `username`, `email`, `password`, `avatar_user`, `number`, `adress`, `postcode`, `State`, `Country`, `role`, `added_at`) VALUES
+(1, '', '', 'marouane', 'admin@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 1, '2023-04-12 10:52:18'),
+(2, '', '', 'marouane user', 'user@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(3, '', '', 'marouane', 'uanemaro216@@gmail.com', '$2y$10$CPvGTgxRI0Hy6Adg82XMVOSZTSG93h3s5FCz5UrvSgHVMrQjj0GvG', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(4, '', '', 'marouane', 'uanemaro216@gmail.com', '$2y$10$0aDfVD9NC3vyl.32G51gT.v.e33sz4PJMHF80S5rZWFa1p4JlAKgO', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(5, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$GvLRocNxgwpQAAoNl/vNguBEPWAO821gApyRS6DN3iV7hpyX2z4nO', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(6, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$dV3XWLLRJfuoBSEfNhD7D.fXH/UKCwgFKJyM222HE6ZWFFi3tRpwW', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(7, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$LZwkKCOawqRtz0EG7DYsQObzYhI8FqDXfEP3l2A28h8eF7xpwz372', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(8, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$14FFD5oNDAlqMBYBhrTGVOvclvacfguoXKNX3hX1wgeh2CLUN1bsm', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(9, '', '', 'mi@gmail.com', '', '$2y$10$dXspze2yvq8PC/hVETX.der2fwhGy8r/v4jRqBqoGkMHgclGDVbLG', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
+(10, '', '', 'mi', 'mi@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18');
 
 --
 -- Index pour les tables déchargées
