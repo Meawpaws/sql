@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 12 avr. 2023 à 12:52
+-- Généré le : jeu. 13 avr. 2023 à 15:46
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -44,8 +44,6 @@ INSERT INTO `card` (`id_card`, `id_u`, `id_p`, `quantité`, `price`) VALUES
 (2, 1, 2, 1, 12),
 (3, 1, 2, 9, 109),
 (4, 1, 2, 1, 12),
-(5, 5, 4, 1, 12),
-(6, 5, 4, 1, 12),
 (7, 1, 4, 1, 11);
 
 -- --------------------------------------------------------
@@ -88,9 +86,7 @@ CREATE TABLE `commentstar` (
 
 INSERT INTO `commentstar` (`id_cs`, `comment`, `star`, `id_u`, `id_p`) VALUES
 (1, 'fbsdvdqsv', 4, 1, 2),
-(2, 'fbsdvdqsv', 4, 2, 2),
 (3, 'fbsdvdqsvdgwxf', 4, 1, 2),
-(4, 'fbsdvdqsv', 4, 2, 2),
 (5, 'fbsdvdqsv', 3, 1, 2),
 (6, 'fbsdvdqsv', 3, 1, 2),
 (7, 'fbsdvdqsv', 1, 1, 2),
@@ -147,20 +143,10 @@ INSERT INTO `commentstar` (`id_cs`, `comment`, `star`, `id_u`, `id_p`) VALUES
 (58, 'dsfdqfsdf', 4, 1, 2),
 (59, 'sdf', 4, 1, 2),
 (60, 'cxfb', 4, 1, 2),
-(61, 'test review', 3, 5, 3),
 (62, 'reftgyhjkl', 4, 1, 2),
-(63, 'dsqgfg', 3, 5, 3),
-(64, 'dsqgfg', 3, 5, 3),
-(65, 'dsqgfg', 3, 5, 3),
-(66, 'csvq', 4, 5, 3),
-(67, 'dsqgfg', 3, 5, 3),
-(68, 'dfrzegf', 4, 5, 3),
-(69, 'erf', 4, 5, 3),
-(70, 'dzfrz', 4, 5, 3),
 (71, 'reftgyhjkl', 4, 1, 2),
 (72, 'reftgyhjkl', 4, 1, 2),
-(73, 'reftgyhjkl', 4, 1, 2),
-(74, 'zdza', 4, 5, 3);
+(73, 'reftgyhjkl', 4, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -214,22 +200,10 @@ INSERT INTO `picturescommentstar` (`image`, `id_cs`) VALUES
 ('dzxdsxsx.dxsx', 29),
 ('dzxdsxsx.dxsx', 62),
 ('dzxdsxsx.dxsx', 62),
-('i-1.svg', 64),
-('i-2.svg', 64),
-('i-3.svg', 64),
-('i-1.svg', 65),
-('i-2.svg', 65),
-('i-3.svg', 65),
-('i-1.svg', 67),
-('i-2.svg', 67),
-('i-3.svg', 67),
 ('dzxdsxsx.dxsx', 71),
 ('dzxdsxsx.dxsx', 71),
 ('dzxdsxsx.dxsx', 73),
-('dzxdsxsx.dxsx', 73),
-('i-1.svg', 74),
-('i-2.svg', 74),
-('i-3.svg', 74);
+('dzxdsxsx.dxsx', 73);
 
 -- --------------------------------------------------------
 
@@ -304,16 +278,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_u`, `name`, `prenom`, `username`, `email`, `password`, `avatar_user`, `number`, `adress`, `postcode`, `State`, `Country`, `role`, `added_at`) VALUES
-(1, '', '', 'marouane', 'admin@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 1, '2023-04-12 10:52:18'),
-(2, '', '', 'marouane user', 'user@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(3, '', '', 'marouane', 'uanemaro216@@gmail.com', '$2y$10$CPvGTgxRI0Hy6Adg82XMVOSZTSG93h3s5FCz5UrvSgHVMrQjj0GvG', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(4, '', '', 'marouane', 'uanemaro216@gmail.com', '$2y$10$0aDfVD9NC3vyl.32G51gT.v.e33sz4PJMHF80S5rZWFa1p4JlAKgO', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(5, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$GvLRocNxgwpQAAoNl/vNguBEPWAO821gApyRS6DN3iV7hpyX2z4nO', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(6, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$dV3XWLLRJfuoBSEfNhD7D.fXH/UKCwgFKJyM222HE6ZWFFi3tRpwW', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(7, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$LZwkKCOawqRtz0EG7DYsQObzYhI8FqDXfEP3l2A28h8eF7xpwz372', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(8, '', '', 'miwi', 'miwi@miwi.miwi', '$2y$10$14FFD5oNDAlqMBYBhrTGVOvclvacfguoXKNX3hX1wgeh2CLUN1bsm', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(9, '', '', 'mi@gmail.com', '', '$2y$10$dXspze2yvq8PC/hVETX.der2fwhGy8r/v4jRqBqoGkMHgclGDVbLG', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18'),
-(10, '', '', 'mi', 'mi@gmail.com', '$2y$10$0zrMz4DVyH5D30hPV5VevuQ6yHjZ1Tcrr56TFYcULMd.Ib1cM8LwS', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18');
+(1, '', '', 'marouaneAdmin', 'admin@gmail.com', '$2y$10$hVf4jFS9/gsDSHnu0l6z.eaLoPxhd5FFAF/hu3jJERL.BxUgIzk.m', 'avatar.png', '', '', 0, '', '', 1, '2023-04-12 10:52:18'),
+(4, '', '', 'marouaneUser', 'user@gmail.com', '$2y$10$hVf4jFS9/gsDSHnu0l6z.eaLoPxhd5FFAF/hu3jJERL.BxUgIzk.m', 'avatar.png', '', '', 0, '', '', 0, '2023-04-12 10:52:18');
 
 --
 -- Index pour les tables déchargées
@@ -371,7 +337,9 @@ ALTER TABLE `product`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_u`);
+  ADD PRIMARY KEY (`id_u`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -417,7 +385,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Contraintes pour les tables déchargées
