@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 16 avr. 2023 à 17:42
+-- Généré le : dim. 16 avr. 2023 à 22:44
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -43,17 +43,18 @@ CREATE TABLE `card` (
 
 CREATE TABLE `category` (
   `id_c` int(11) NOT NULL,
-  `cname` varchar(255) NOT NULL
+  `cname` varchar(255) NOT NULL,
+  `Description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `category`
 --
 
-INSERT INTO `category` (`id_c`, `cname`) VALUES
-(3, 'bedBrackets'),
-(2, 'cat'),
-(1, 'dog');
+INSERT INTO `category` (`id_c`, `cname`, `Description`) VALUES
+(1, 'dog', ''),
+(2, 'cat', ''),
+(3, 'bedBrackets', '');
 
 -- --------------------------------------------------------
 
@@ -266,7 +267,7 @@ ALTER TABLE `card`
 -- AUTO_INCREMENT pour la table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `commentstar`
