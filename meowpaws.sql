@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 16 avr. 2023 à 22:44
+-- Généré le : mar. 18 avr. 2023 à 14:41
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -35,6 +35,16 @@ CREATE TABLE `card` (
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Déchargement des données de la table `card`
+--
+
+INSERT INTO `card` (`id_card`, `id_u`, `id_p`, `quantité`, `price`) VALUES
+(14, 1, 7, 1, 103),
+(15, 1, 7, 1, 103),
+(16, 13, 8, 1, 606),
+(17, 13, 8, 1, 606);
+
 -- --------------------------------------------------------
 
 --
@@ -55,6 +65,17 @@ INSERT INTO `category` (`id_c`, `cname`, `Description`) VALUES
 (1, 'dog', ''),
 (2, 'cat', ''),
 (3, 'bedBrackets', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `checkout`
+--
+
+CREATE TABLE `checkout` (
+  `id_u` int(11) NOT NULL,
+  `priceCheckedOut` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -187,10 +208,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_u`, `name`, `prenom`, `username`, `email`, `password`, `avatar_user`, `number`, `adress`, `postcode`, `State`, `Country`, `role`, `added_at`) VALUES
-(1, '', '', 'marouaneAdmin', 'admin@gmail.com', '$2y$10$hVf4jFS9/gsDSHnu0l6z.eaLoPxhd5FFAF/hu3jJERL.BxUgIzk.m', 'avatar.png', '', '', 0, '', '', 1, '2023-04-12'),
-(13, 'Tarik Price', 'Atque in deserunt at', 'MAROUANE', 'user@gmail.com', '$2y$10$W2HTxhAnUJGTZ2j9FvmTN.fndJJcnEY6Wm5NY38SczKutsLJWE/A.', 'avatar.png', '50', 'Explicabo Id dolor ', 0, 'Voluptatem repudiand', 'Nam quia minim assum', 0, '2023-04-13'),
-(14, 'Cadman Hester', 'Molestiae qui rem de', 'pibus', 'ziwepu@mailinator.com', '1234', 'avatar.png', '828', 'Ex animi non commod', 0, 'Et dolor lorem nostr', 'Modi ipsam voluptas ', 1, '2023-04-13'),
-(15, 'Christine Arnold', 'In vero dignissimos ', 'qozekysiga', 'zibyzanid@mailinator.com', 'Pa$$w0rd!', 'avatar.png', '780', 'Cumque aliquam ab il', 0, 'Proident id velit a', 'Beatae consectetur ', 1, '2023-04-13');
+(1, 'marouane', 'bouchettoy', 'marouaneAdmin', 'admin@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'avatar2.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 1, '2023-04-12'),
+(13, 'marouane', 'bouchettoy', 'MAROUANE', 'user@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'me.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 0, '2023-04-13');
 
 --
 -- Index pour les tables déchargées
@@ -261,7 +280,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `card`
 --
 ALTER TABLE `card`
-  MODIFY `id_card` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_card` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `category`
@@ -285,7 +304,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT pour la table `picturesproduct`
 --
 ALTER TABLE `picturesproduct`
-  MODIFY `id_i` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_i` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT pour la table `product`
@@ -297,7 +316,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Contraintes pour les tables déchargées
