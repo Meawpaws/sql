@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 18 avr. 2023 à 14:41
+-- Généré le : mer. 19 avr. 2023 à 23:31
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -35,16 +35,6 @@ CREATE TABLE `card` (
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Déchargement des données de la table `card`
---
-
-INSERT INTO `card` (`id_card`, `id_u`, `id_p`, `quantité`, `price`) VALUES
-(14, 1, 7, 1, 103),
-(15, 1, 7, 1, 103),
-(16, 13, 8, 1, 606),
-(17, 13, 8, 1, 606);
-
 -- --------------------------------------------------------
 
 --
@@ -62,9 +52,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id_c`, `cname`, `Description`) VALUES
-(1, 'dog', ''),
-(2, 'cat', ''),
-(3, 'bedBrackets', '');
+(1, 'dog', 'for dog'),
+(2, 'cat', 'for cat'),
+(3, 'bedBrackets', 'bed et brackets'),
+(4, 'Krokette', 'Krokettep pour les chiens et les chats');
 
 -- --------------------------------------------------------
 
@@ -94,30 +85,6 @@ CREATE TABLE `commentstar` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
---
-
-CREATE TABLE `contact` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `telephone` varchar(12) NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Déchargement des données de la table `contact`
---
-
-INSERT INTO `contact` (`id`, `name`, `email`, `telephone`, `message`) VALUES
-(1, 'marouane bouchettoy', 'uanemaro216@gmail.com', '0696554077', 'hjk'),
-(2, 'marouane bouchettoy', 'uanemaro216@gmail.com', '', 'sqrf'),
-(3, 'marouane bouchettoy', 'uanemaro216@gmail.com', '', 'sqrf'),
-(4, 'marouane bouchettoy', 'uanemaro216@gmail.com', '', 'sqrf');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `picturescommentstar`
 --
 
@@ -143,16 +110,46 @@ CREATE TABLE `picturesproduct` (
 --
 
 INSERT INTO `picturesproduct` (`id_i`, `image`, `id_p`) VALUES
-(65, 'i-1.svg', 6),
-(66, 'i-2.svg', 6),
-(67, 'i-3.svg', 6),
-(68, 'item.svg', 6),
-(69, 'i-1.svg', 5),
-(70, 'i-3.svg', 5),
-(71, 'i-1.svg', 9),
-(72, 'i-2.svg', 9),
-(73, 'i-3.svg', 9),
-(74, 'item.svg', 9);
+(1, 'p-6-2.jpg', 11),
+(2, 'p-6-3.jpg', 11),
+(3, 'p-6-4.jpg', 11),
+(4, 'p-6-5.jpg', 11),
+(5, 'p-2-2.jpg', 12),
+(6, 'p-2-3.jpg', 12),
+(7, 'p-2-4.jpg', 12),
+(8, 'p-2-5.jpg', 12),
+(9, 'p-1-2.jpg', 13),
+(10, 'p-1-3.jpg', 13),
+(11, 'p-1-4.jpg', 13),
+(12, 'p-1-5.jpg', 13),
+(13, 'p-4-2.jpg', 14),
+(14, 'p-4-3.jpg', 14),
+(15, 'p-3-2.jpg', 15),
+(16, 'p-3-3.jpg', 15),
+(17, 'p-3-4.jpg', 15),
+(18, 'p-3-5.jpg', 15),
+(19, 'p-5-2.jpg', 16),
+(20, 'p-5-3.jpg', 16),
+(21, 'p-7-2.jpg', 17),
+(22, 'p-7-3.jpg', 17),
+(23, 'p-7-4.jpg', 17),
+(24, 'p-7-5.jpg', 17),
+(25, 'p-8-2.jpg', 18),
+(26, 'p-8-3.jpg', 18),
+(27, 'p-8-4.jpg', 18),
+(28, 'p-8-5.jpg', 18),
+(29, 'p-9-2.jpg', 19),
+(30, 'p-9-3.jpg', 19),
+(31, 'p-9-4.jpg', 19),
+(32, 'p-9-5.jpg', 19),
+(33, 'p-10-2.jpg', 20),
+(34, 'p-10-3.jpg', 20),
+(35, 'p-11-2.jpg', 21),
+(36, 'p-11-3.jpg', 21),
+(37, 'p-11-4.jpg', 21),
+(38, 'p-11-5.jpg', 21),
+(39, 'p-12-2.jpg', 22),
+(40, 'p-12-3.jpg', 22);
 
 -- --------------------------------------------------------
 
@@ -174,11 +171,18 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_p`, `pname`, `price`, `description`, `imagePricipal`, `id_c`) VALUES
-(5, 'shoses', 12, 'Lorem ipsum dolor sit amet adipisicing elit. Maxime mollitia,', 'i-3.svg', 2),
-(6, 'Melyssa Stout', 103, 'Assumenda ut volupta', 'i-3.svg', 2),
-(7, 'Melyssa Stout', 103, 'Assumenda ut volupta', 'i-3.svg', 2),
-(8, 'Blythe Sargent', 606, 'Nam est sunt molest', 'item.svg', 1),
-(9, 'Maile Lloyd', 914, 'Pariatur Laboriosam', 'i-3.svg', 1);
+(11, 'Double Bande Anti-griffes', 7, 'Protection de Canapé', 'p-6-1.jpg', 2),
+(12, 'TRUELOVE', 38, 'Harnais pour animal de compagnie', 'p-2-1.jpg', 1),
+(13, 'Laisse de chien durable', 5, 'rétractable automatiquement,', 'p-1-1.jpg', 1),
+(14, 'Hibou surélevé', 12, 'réglable, à faible hauteur', 'p-4-1.jpg', 1),
+(15, 'Collier de chien unisexe', 4, 'collier de chien personnalisé', 'p-3-1.jpg', 1),
+(16, 'Jouet Intelligent OVNI', 25, 'pour Chat, Entraînement à la Capture', 'p-5-1.jpg', 2),
+(17, 'brosse autonettoyante', 1, 'Masseur pour chats', 'p-7-1.jpeg', 2),
+(18, 'Baguette mains libres', 1, 'oiseau/plume chat avec cloche ventouse puissante', 'p-8-1.jpg', 2),
+(19, 'Lit Confortable', 18, 'Mir pour Animaux de Compagnie,', 'p-9-1.jpg', 3),
+(20, 'Panier pour dormir', 11, 'profondément en hiver,', 'p-10-1.jpg', 3),
+(21, 'Tapis rafraîchissant', 9, 'accessoire d\'été', 'p-11-1.jpg.jpg', 3),
+(22, 'Maison pliable', 21, 'lit grotte, Chihuahua, panier', 'p-12-1.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -208,8 +212,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_u`, `name`, `prenom`, `username`, `email`, `password`, `avatar_user`, `number`, `adress`, `postcode`, `State`, `Country`, `role`, `added_at`) VALUES
-(1, 'marouane', 'bouchettoy', 'marouaneAdmin', 'admin@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'avatar2.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 1, '2023-04-12'),
-(13, 'marouane', 'bouchettoy', 'MAROUANE', 'user@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'me.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 0, '2023-04-13');
+(1, 'marouane', 'bouchettoy', 'Admin', 'admin@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'avatar2.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 1, '2023-04-12'),
+(2, 'marouane', 'bouchettoy', 'user', 'user@gmail.com', '$2y$10$jQsLpP6Dwo6ET8NJvz552e/mJ/VlK9Y7ZA3IDXjCPLLeg4ENc3cke', 'me.png', '0696554077', 'Rue My Youssef Residence Raha 3eme Etage Appartemment Numro 27', 46010, 'Safi', 'Morocco', 0, '2023-04-13');
 
 --
 -- Index pour les tables déchargées
@@ -237,12 +241,6 @@ ALTER TABLE `commentstar`
   ADD PRIMARY KEY (`id_cs`),
   ADD KEY `cs_user` (`id_u`),
   ADD KEY `cs_product` (`id_p`);
-
---
--- Index pour la table `contact`
---
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `picturescommentstar`
@@ -280,43 +278,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `card`
 --
 ALTER TABLE `card`
-  MODIFY `id_card` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_card` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_c` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `commentstar`
 --
 ALTER TABLE `commentstar`
-  MODIFY `id_cs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
-
---
--- AUTO_INCREMENT pour la table `contact`
---
-ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT pour la table `picturesproduct`
 --
 ALTER TABLE `picturesproduct`
-  MODIFY `id_i` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id_i` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Contraintes pour les tables déchargées
